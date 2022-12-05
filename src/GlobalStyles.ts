@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 30px;
   width: 375px;
 `;
 
@@ -40,4 +40,23 @@ export const BudgetButton = styled.button`
   color: #000000;
   margin-right: 20px;
   cursor: pointer;
+`;
+
+export const Input = styled.input`
+  width: 335px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  padding-left: 20px;
+  ::placeholder {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #999999;
+  }
 `;

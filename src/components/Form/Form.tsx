@@ -1,7 +1,8 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useBudgetContext } from "../../context/BudgetContext";
-import { Title } from "../../GlobalStyles";
-import { Button, FormStyled, Input } from "./styles";
+import { useExpencesListContext } from "../../context/ExpencesListContext/ExpencesListContext";
+import { Input, Title } from "../../GlobalStyles";
+import { Button, FormStyled } from "./styles";
 
 interface IExpence {
   name: string;
@@ -10,11 +11,15 @@ interface IExpence {
 
 export const Form = () => {
   const { setNewBudget } = useBudgetContext();
+  const { curentExpencesList, setNewExpencesList } = useExpencesListContext();
+
   const { register, handleSubmit } = useForm<IExpence>();
   const { budget } = useBudgetContext();
 
   const onSubmit: SubmitHandler<IExpence> = (data) => {
     setNewBudget(budget - data.cost);
+    setNewExpencesList(data);
+    curentExpencesList.push(data);
   };
 
   return (

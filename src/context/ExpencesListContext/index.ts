@@ -1,3 +1,3 @@
-import { ExpencesListContext } from "./ExpencesListContext";
+import { ExpencesListContextProvider } from "./ExpencesListContext";
 
-export { ExpencesListContext };
+export { ExpencesListContextProvider };
